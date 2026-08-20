@@ -1,0 +1,1 @@
+# AI Browser Bridge\n\nChrome browser automation MCP server
