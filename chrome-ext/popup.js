@@ -1,0 +1,5 @@
+﻿var s=document.getElementById('status');var t=document.getElementById('status-text');var u=document.getElementById('url');var ti=document.getElementById('title');var b=document.getElementById('connect-btn');
+function set(c){s.className='status '+((c?'connected':'disconnected'));t.textContent=(c?'Connected':'Disconnected');}
+function chk(){try{var w=new WebSocket('ws://localhost:9009');w._t=setTimeout(function(){if(w.readyState!==1)set(false);w.close();},2000);w.onopen=function(){clearTimeout(w._t);set(true);chrome.tabs.query({active:true,currentWindow:true},function(ts){if(ts[0]){u.textContent=ts[0].url||'-';ti.textContent=ts[0].title||'-';}});w.close();};w.onerror=function(){clearTimeout(w._t);set(false);};}catch(e){set(false);}}
+b.addEventListener('click',function(){var w=new WebSocket('ws://localhost:9009');w.onopen=function(){set(true);b.textContent='Connected!';b.disabled=true;w.close();};w.onerror=function(){set(false);};});
+chrome.tabs.onUpdated.addListener(chk);chrome.windows.onFocusChanged.addListener(chk);chk();
