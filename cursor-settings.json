@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "ai-browser-bridge": {
+      "command": "node",
+      "args": [
+        "C:\\Users\\顺李成张\\Documents\\Codex\\2026-08-16\\chrome-plugin-chrome-openai-bundled-file-2\\work\\ai-browser-bridge\\dist\\index.js"
+      ],
+      "env": {
+        "WS_PORT": "9009",
+        "OPENAI_API_KEY": "dummy-key",
+        "LOG_LEVEL": "info"
+      }
+    }
+  }
+}
