@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Browser Bridge - 管理面板</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, sans-serif; background: #f5f5f5; }
+    .sidebar { width: 240px; height: 100vh; background: #1a1a2e; color: white; position: fixed; }
+    .sidebar h2 { padding: 20px; border-bottom: 1px solid #333; }
+    .sidebar ul { list-style: none; padding: 10px 0; }
+    .sidebar li { padding: 12px 20px; cursor: pointer; }
+    .sidebar li:hover { background: #16213e; }
+    .sidebar li.active { background: #0f3460; }
+    .main { margin-left: 240px; padding: 30px; }
+    .card { background: white; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .stat { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 8px; }
+    .stat h3 { font-size: 32px; }
+    .stat p { opacity: 0.8; }
+    .table { width: 100%; border-collapse: collapse; }
+    .table th, .table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+    .badge { padding: 4px 8px; border-radius: 4px; font-size: 12px; }
+    .badge-green { background: #d4edda; color: #155724; }
+    .badge-red { background: #f8d7da; color: #721c24; }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🤖 AI Bridge</h2>
+    <ul>
+      <li class="active">📊 概览</li>
+      <li>👥 用户管理</li>
+      <li>📈 使用统计</li>
+      <li>🔑 API 密钥</li>
+      <li>⚙️ 系统设置</li>
+    </ul>
+  </div>
+  
+  <div class="main">
+    <h1>管理面板</h1>
+    
+    <div class="stats">
+      <div class="stat">
+        <h3>1,234</h3>
+        <p>总用户数</p>
+      </div>
+      <div class="stat">
+        <h3>56</h3>
+        <p>活跃会话</p>
+      </div>
+      <div class="stat">
+        <h3>89,456</h3>
+        <p>API 调用</p>
+      </div>
+      <div class="stat">
+        <h3>$2,345</h3>
+        <p>本月收入</p>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>最近用户</h2>
+      <table class="table">
+        <tr><th>用户名</th><th>邮箱</th><th>订阅</th><th>状态</th><th>注册时间</th></tr>
+        <tr><td>user123</td><td>user@example.com</td><td><span class="badge badge-green">Pro</span></td><td><span class="badge badge-green">活跃</span></td><td>2024-01-15</td></tr>
+        <tr><td>alice88</td><td>alice@example.com</td><td><span class="badge badge-green">Enterprise</span></td><td><span class="badge badge-green">活跃</span></td><td>2024-01-14</td></tr>
+        <tr><td>bob456</td><td>bob@example.com</td><td><span class="badge">Free</span></td><td><span class="badge badge-red">已过期</span></td><td>2024-01-10</td></tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
